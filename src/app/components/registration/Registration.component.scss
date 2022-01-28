@@ -1,0 +1,37 @@
+.registration {
+  background-image: linear-gradient(259deg, rgba(172, 50, 228, 0.9), rgba(121, 24, 242, 0.9) 48%, #4801ff);
+  height: 388px;
+
+  &__container {
+    padding: 80px 0;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 30px;
+    max-width: initial;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__btn {
+    background-image: linear-gradient(to left, #fbbc2b, #fe6248);
+    min-height: 56px;
+    padding: 0 40px;
+    border-radius: 28px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    border-color: transparent;
+    display: block;
+    margin: auto;
+
+    :hover {
+      background-image: none;
+      background-color: #fe6248;
+    }
+  }
+
+}
