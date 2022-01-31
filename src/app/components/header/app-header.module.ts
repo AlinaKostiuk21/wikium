@@ -1,7 +1,7 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from "@angular/core";
-import {NavComponent} from "../nav/Nav.component";
+import {NavComponent} from "../nav/app-nav.component";
 import {CommonModule} from "@angular/common";
-import {HeaderMainComponent} from "../header-main/Header-main.component";
+import {HeaderMainComponent} from "../header-main/app-header-main.component";
 
 @NgModule({
   declarations: [

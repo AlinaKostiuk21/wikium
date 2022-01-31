@@ -1,7 +1,7 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {HelpComponent} from "../help/Help.component";
-import {RegistrationComponent} from "../registration/Registration.component";
+import {HelpComponent} from "../help/app-help.component";
+import {RegistrationComponent} from "../registration/app-registration.component";
 
 @NgModule({
   declarations: [
