@@ -12,7 +12,7 @@ import {MainContentModule} from "./components/main-content/app-main-content.modu
   declarations: [
     AppComponent,
     HeaderComponent,
-    MainContentComponent,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,
