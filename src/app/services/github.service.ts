@@ -9,8 +9,8 @@ export class GithubService {
 
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<any> {
-    const url = "https://api.github.com/repositories";
+  getData(userName: string): Observable<any> {
+    const url = `https://api.github.com/users/${userName}/repos`;
 
     return this.http.get<any>(url);
   }

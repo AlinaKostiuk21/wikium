@@ -11,10 +11,16 @@ import {GithubService} from "../../services/github.service";
 export class GetRequestComponent {
 
   repositories: any
+  userName: string = ''
 
   constructor(private githubService: GithubService) {}
 
   getRepositories() {
-      this.githubService.getData().subscribe(data => this.repositories = data)
+      this.githubService.getData(this.userName).subscribe(data => this.repositories = data)
+  }
+
+  setRepositoryAuthor($event: Event) {
+    // @ts-ignore
+    this.userName = $event.target.value;
   }
 }
