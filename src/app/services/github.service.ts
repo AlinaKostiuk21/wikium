@@ -11,7 +11,7 @@ export class GithubService {
   constructor(private http: HttpClient) { }
 
   getData(userName: string): Observable<any> {
-    const url = `${environment.githubUrl}/users/${userName}/repos`;
+    const url = `${environment.githubUrl}/users/${userName}/repos?per_page=10`;
 
     return this.http.get<any>(url);
   }

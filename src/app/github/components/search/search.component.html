@@ -1,7 +1,9 @@
-<div>
-  <h4>Get request</h4>
+<div class="main-content__search search">
+  <h4 class="search__title">Get request</h4>
   <label for="app-get-repositories-search-by">Repository username</label>
   <input id="app-get-repositories-search-by" type="text" (change)="setRepositoryAuthor($event)">
   <button (click)="getRepositories()">Get repositories</button>
   <app-repositories [repositories]="repositories"></app-repositories>
+  <app-search-by-template-driven></app-search-by-template-driven>
+  <app-search-by-reactive-form></app-search-by-reactive-form>
 </div>
