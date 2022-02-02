@@ -1,0 +1,7 @@
+<div>
+  <h4>Get request</h4>
+  <label for="app-get-repositories-search-by">Repository username</label>
+  <input id="app-get-repositories-search-by" type="text" (change)="setRepositoryAuthor($event)">
+  <button (click)="getRepositories()">Get repositories</button>
+  <app-repositories [repositories]="repositories"></app-repositories>
+</div>

@@ -1,0 +1,10 @@
+<div>
+  <h4>Get request</h4>
+  <label for="app-get-repositories-search-by">Repository username</label>
+  <input id="app-get-repositories-search-by" type="text" (change)="setRepositoryAuthor($event)">
+  <button (click)="getRepositories()">Get repositories</button>
+  <ul *ngFor="let repository of repositories">
+    <p>{{repository.id}} {{repository.name}}</p>
+  </ul>
+</div>
+
