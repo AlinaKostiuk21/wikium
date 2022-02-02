@@ -2,8 +2,8 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'app-help',
-  templateUrl: './app-help.component.html',
-  styleUrls: ['./app-help.component.scss']
+  templateUrl: './help.component.html',
+  styleUrls: ['./help.component.scss']
 })
 
 export class HelpComponent {

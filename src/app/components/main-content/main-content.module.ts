@@ -1,21 +1,20 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {HelpComponent} from "./help/app-help.component";
-import {RegistrationComponent} from "./registration/app-registration.component";
-import {SearchComponent} from "./search/search.component";
+import {HelpComponent} from "./help/help.component";
+import {RegistrationComponent} from "./registration/registration.component";
+import {SearchComponent} from "../../github/components/search/search.component";
+import {GithubModule} from "../../github/github.module";
 
 @NgModule({
   declarations: [
     HelpComponent,
-    RegistrationComponent,
-    SearchComponent
+    RegistrationComponent
   ],
   exports: [
     HelpComponent,
-    RegistrationComponent,
-    SearchComponent
+    RegistrationComponent
   ],
-  imports: [ CommonModule ],
+  imports: [ CommonModule, GithubModule ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 

@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {RepositoriesComponent} from "../components/repositories/repositories.component";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RepositoriesComponent} from "./components/repositories/repositories.component";
 
 @NgModule({
   declarations: [
@@ -16,4 +16,5 @@ import {RepositoriesComponent} from "../components/repositories/repositories.com
   ]
 })
 
-export class RepositoriesModule { }
+export class RepositoriesModule {
+}
