@@ -1,8 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {debounceTime, filter, map} from "rxjs";
+import {debounceTime, map} from "rxjs";
 import {GithubService} from "../../../../services/github.service";
-import {FilterByNamePipe} from "../../pipes/filter-by-name.pipe";
 
 @Component({
   selector: 'app-search-by-reactive-form',
@@ -12,15 +11,19 @@ import {FilterByNamePipe} from "../../pipes/filter-by-name.pipe";
 export class SearchByReactiveFormComponent implements OnInit {
   @Input() repositories: any[] = [];
 
+  @Output() filteringRepositories = new EventEmitter();
+
   filterRepositories: any[] = [];
 
   searchForm = this.formBuilder.group({
     query: ['', Validators.required]
   })
 
-  constructor(private repositoriesService: GithubService,
-              private formBuilder: FormBuilder,
-              private filterByName: FilterByNamePipe) { }
+  constructor(
+    private repositoriesService: GithubService,
+    private formBuilder: FormBuilder
+  ) {
+  }
 
   ngOnInit(): void {
     this.subscribeOnSearchUpdates();
@@ -31,15 +34,10 @@ export class SearchByReactiveFormComponent implements OnInit {
       .pipe(
         debounceTime(100),
         map((formValues) => formValues.query),
-        map((query: string) => query.toLocaleLowerCase()),
+        map((query: string) => query.toLocaleLowerCase())
       )
-      .subscribe((query: string) => {
-        this.filterRepositoriesByName(query);
-      })
-
-  }
-
-  private filterRepositoriesByName(query: string = '') {
-    this.filterRepositories = this.filterByName.transform(this.repositories, query);
+      .subscribe((query) => {
+        this.filteringRepositories.emit(query);
+      });
   }
 }

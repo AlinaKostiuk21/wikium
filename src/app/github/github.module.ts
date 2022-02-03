@@ -4,7 +4,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {RepositoriesModule} from "./repositories/repositories.module";
 import {SearchComponent} from "./components/search/search.component";
 import {GithubService} from "../services/github.service";
-import {SearchModule} from "./search/search.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import {SearchModule} from "./search/search.module";
     CommonModule,
     HttpClientModule,
     RepositoriesModule,
-    SearchModule
   ],
 
   exports: [

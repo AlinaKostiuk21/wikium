@@ -9,7 +9,8 @@ export class RepositoriesComponent implements OnInit {
 
   @Input() repositories: any
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

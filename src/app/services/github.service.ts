@@ -6,6 +6,7 @@ import {environment} from "../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
+
 export class GithubService {
 
   constructor(private http: HttpClient) { }

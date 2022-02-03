@@ -1,3 +1,5 @@
 <ul *ngFor="let repository of repositories">
-  <p>{{repository.id}} {{repository.name}}</p>
+  <p>{{repository.id}} - {{repository.name}}</p>
 </ul>
+<p *ngIf="!repositories?.length">No repositories found</p>
+

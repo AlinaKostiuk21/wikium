@@ -3,7 +3,10 @@
   <label for="app-get-repositories-search-by">Repository username</label>
   <input id="app-get-repositories-search-by" type="text" (change)="setRepositoryAuthor($event)">
   <button (click)="getRepositories()">Get repositories</button>
-  <app-repositories [repositories]="repositories"></app-repositories>
-  <app-search-by-template-driven></app-search-by-template-driven>
-  <app-search-by-reactive-form></app-search-by-reactive-form>
+  <app-search-by-reactive-form
+    [repositories]="repositories"
+    (filteringRepositories)="filterRepositories($event)"
+  ></app-search-by-reactive-form>
+  <app-repositories [repositories]="filteredRepositories"></app-repositories>
+<!--  <app-search-by-template-driven></app-search-by-template-driven>-->
 </div>
