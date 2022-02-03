@@ -1,0 +1,16 @@
+<section class="repositories">
+  <header class="repositories__search search">
+    <br>
+    <form class="search__form" [formGroup]="searchForm">
+      <input
+        type="text"
+        placeholder="Search by name ... "
+        class="search__input"
+        name="search"
+        formControlName="query"/>
+    </form>
+  </header>
+
+  <app-repositories [repositories]="filterRepositories"></app-repositories>
+  <p *ngIf="!filterRepositories?.length">No repositories found</p>
+</section>
